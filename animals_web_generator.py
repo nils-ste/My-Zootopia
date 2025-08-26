@@ -23,14 +23,19 @@ for animal in animals_data:
         has_type = False
 
     if has_type:
-        output += (f"Name: {name_animal}\n"
-              f"Diet: {diet_animal}\n"
-              f"Location: {location_animal}\n"
-              f"Type: {type_animal}\n\n")
+        # append information to each string
+        output += '<li class="cards__item">'
+        output += (f"Name: {name_animal}<br/>\n"
+              f"Diet: {diet_animal}<br/>\n"
+              f"Location: {location_animal}<br/>\n"
+              f"Type: {type_animal}<br/>\n\n")
+        output += '</li>'
     else:
-        output += (f"Name: {name_animal}\n"
-              f"Diet: {diet_animal}\n"
-              f"Location: {location_animal}\n\n")
+        output += '<li class="cards__item">'
+        output += (f"Name: {name_animal}<br/>\n"
+              f"Diet: {diet_animal}<br/>\n"
+              f"Location: {location_animal}<br/>\n\n")
+        output += '</li>'
 
 animals_output = animals_template.replace("__REPLACE_ANIMALS_INFO__", output)
 
