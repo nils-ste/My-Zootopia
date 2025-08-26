@@ -25,16 +25,22 @@ for animal in animals_data:
     if has_type:
         # append information to each string
         output += '<li class="cards__item">'
-        output += (f"Name: {name_animal}<br/>\n"
-              f"Diet: {diet_animal}<br/>\n"
-              f"Location: {location_animal}<br/>\n"
-              f"Type: {type_animal}<br/>\n\n")
+        output += (f"<div class = 'card__title'>{name_animal}</div>"
+                   f"<p class = 'card__text'>"
+                   f"<strong>Diet:</strong> {diet_animal}<br/>\n"
+                   f"<strong>Location:</strong> {location_animal}<br/>\n"
+                   f"<strong>Type:</strong> {type_animal}<br/>\n"
+                   f"</p>")
+
         output += '</li>'
     else:
         output += '<li class="cards__item">'
-        output += (f"Name: {name_animal}<br/>\n"
-              f"Diet: {diet_animal}<br/>\n"
-              f"Location: {location_animal}<br/>\n\n")
+        output += (f"<div class = 'card__title'>{name_animal}</div>"
+                   f"<p class = 'card__text'>"
+                   f"<strong>Diet:</strong> {diet_animal}<br/>\n"
+                   f"<strong>Location:</strong> {location_animal}<br/>\n"
+                   f"</p>")
+
         output += '</li>'
 
 animals_output = animals_template.replace("__REPLACE_ANIMALS_INFO__", output)
