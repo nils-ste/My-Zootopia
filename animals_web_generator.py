@@ -9,10 +9,12 @@ def load_data(file_path):
   with open(file_path, "r") as handle:
     return json.load(handle)
 
+
 animals_data = load_data('animals_data.json')
 
-output = ''
-for animal in animals_data:
+
+def serialize_animal(animal_obj):
+    output = ''
     name_animal = animal['name']
     diet_animal = animal['characteristics']['diet']
     location_animal = animal['locations'][0]
@@ -42,6 +44,12 @@ for animal in animals_data:
                    f"</p>")
 
         output += '</li>'
+    return output
+
+
+output = ''
+for animal in animals_data:
+    output += serialize_animal(animal)
 
 animals_output = animals_template.replace("__REPLACE_ANIMALS_INFO__", output)
 
